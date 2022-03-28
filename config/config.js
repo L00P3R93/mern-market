@@ -6,7 +6,10 @@ const config = {
     process.env.MONGO_HOST ||
     'mongodb://' + (process.env.IP || 'localhost') + ':' +
     (process.env.MONGO_PORT || '27017') +
-    '/mernProject'
+    '/mernProject',
+    stripe_connect_test_client_id: '',
+    stripe_test_secret_key: '',
+    stripe_test_api_key: ''
 }
 
 export default config
