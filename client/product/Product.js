@@ -104,7 +104,7 @@ export default function Product({match}){
                             subheader={product.quantity > 0? 'In Stock': 'Out of Stock'}
                             action={
                                 <span className={classes.action}>
-                                <AddToCart cartStyle={classes.addCart} item={product}/>
+                                    <AddToCart cartStyle={classes.addCart} item={product}/>
                                 </span>
                             }
                         />
