@@ -13,7 +13,7 @@
     "start": "NODE_ENV=production node ./dist/server.generated.js"
   },
   "engines": {
-    "node": "12.22.9",
+    "node": "14.19.1",
     "npm": "8.5.4"
   },
   "devDependencies": {
@@ -22,6 +22,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "file-loader": "^6.0.0",
+    "loadash": "^1.0.0",
     "nodemon": "^2.0.2",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",

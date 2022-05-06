@@ -7,7 +7,7 @@ const ShopSchema = new mongoose.Schema({
         required: 'Name is required'
     },
     image: {
-        data: ArrayBuffer,
+        data: Buffer,
         contentType: String
     },
     description: {
