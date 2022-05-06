@@ -34,16 +34,11 @@ export default function Users() {
 		const signal = abortController.signal
 
 		list(signal).then((data) => {
-			if (data && data.error) {
-				console.log(data.error)
-			} else {
-				setUsers(data)
-			}
+			if (data && data.error) console.log(data.error)
+			else setUsers(data)
 		})
 
-		return function cleanup(){
-			abortController.abort()
-		}
+		return function cleanup(){abortController.abort()}
 	}, [])
 
 
@@ -53,24 +48,25 @@ export default function Users() {
 					All Users
 				</Typography>
 				<List dense>
-				 {users.map((item, i) => {
-					return <Link to={"/user/" + item._id} key={i}>
-										<ListItem button>
-											<ListItemAvatar>
-												<Avatar>
-													<Person/>
-												</Avatar>
-											</ListItemAvatar>
-											<ListItemText primary={item.name}/>
-											<ListItemSecondaryAction>
-											<IconButton>
-													<ArrowForward/>
-											</IconButton>
-											</ListItemSecondaryAction>
-										</ListItem>
-								 </Link>
-							 })
-						 }
+			 		{users.map((item, i) => {
+						return (
+							<Link to={"/user/" + item._id} key={i}>
+								<ListItem button>
+									<ListItemAvatar>
+										<Avatar>
+											<Person/>
+										</Avatar>
+									</ListItemAvatar>
+									<ListItemText primary={item.name}/>
+									<ListItemSecondaryAction>
+										<IconButton>
+											<ArrowForward/>
+										</IconButton>
+									</ListItemSecondaryAction>
+								</ListItem>
+							</Link>
+						)
+				 	})}
 				</List>
 			</Paper>
 		)

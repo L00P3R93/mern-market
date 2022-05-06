@@ -142,7 +142,7 @@ export default function Order({match}){
                                                 <Typography type="subheading" component="h3" className={classes.itemShop} color="primary">$ {item.product.price} x {item.quantity}</Typography>
                                                 <span className={classes.itemTotal}>${item.product.price * item.quantity}</span>
                                                 <span className={classes.itemShop}>Shop: {item.shop.name}</span>
-                                                <Typography type="subheading" component="h3" color={item.status == "Cancelled" ? "error":"secondary"}>Status: {item.status}</Typography>
+                                                <Typography type="subheading" component="h3" color={item.status === "Cancelled" ? "error":"secondary"}>Status: {item.status}</Typography>
                                             </CardContent>
                                         </div>
                                     </Card>
