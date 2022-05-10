@@ -5,7 +5,9 @@ import Card from '@material-ui/core/Card'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import GridList from '@material-ui/core/GridList'
+import ImageList from "@material-ui/core/ImageList";
 import GridListTile from '@material-ui/core/GridListTile'
+import ImageListItem from "@material-ui/core/ImageListItem";
 import Icon from '@material-ui/core/Icon'
 import {list} from './api-product.js'
 import Products from './Products'
@@ -54,11 +56,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function Categories(props){
     const classes = useStyles()
-    const [products, setProducts] = useState()
+    const [products, setProducts] = useState([])
     const [selected, setSelected] = useState(props.categories[0])
     useEffect(() => {
         const abortController = new AbortController()
-        const signal = abortController.signal
+        const signal = abortController.signalsudo
 
         list({category: props.categories[0]})
         .then((data) => {

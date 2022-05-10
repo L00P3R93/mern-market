@@ -1,5 +1,5 @@
 import Product from '../models/product.model'
-import extend from 'loadash/extend'
+import extend from 'lodash/extend'
 import errorHandler from './../helpers/dbErrorHandler'
 import formidable from 'formidable'
 import fs from 'fs'

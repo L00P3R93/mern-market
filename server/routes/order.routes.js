@@ -19,21 +19,18 @@ router.route('/api/orders/user/:userId')
 router.route('/api/order/status_values')
   .get(orderCtrl.getStatusValues)
 
-router.route('/api/order/:shopId/cancel/:productId')
-  .put(authCtrl.requireSignin, shopCtrl.isOwner, productCtrl.increaseQuantity, orderCtrl.update)
+router.route('/api/order/:shopId/cancel/:productId').put(authCtrl.requireSignin, shopCtrl.isOwner, productCtrl.increaseQuantity, orderCtrl.update)
 
-router.route('/api/order/:orderId/charge/:userId/:shopId')
-  .put(authCtrl.requireSignin, shopCtrl.isOwner, userCtrl.createCharge, orderCtrl.update)
+router.route('/api/order/:orderId/charge/:userId/:shopId').put(authCtrl.requireSignin, shopCtrl.isOwner, userCtrl.createCharge, orderCtrl.update)
 
-router.route('/api/order/status/:shopId')
-  .put(authCtrl.requireSignin, shopCtrl.isOwner, orderCtrl.update)
+router.route('/api/order/status/:shopId').put(authCtrl.requireSignin, shopCtrl.isOwner, orderCtrl.update)
 
-router.route('/api/order/:orderId')
-  .get(orderCtrl.read)
+router.route('/api/order/:orderId').get(orderCtrl.read)
 
 router.param('userId', userCtrl.userByID)
 router.param('shopId', shopCtrl.shopByID)
 router.param('productId', productCtrl.productByID)
 router.param('orderId', orderCtrl.orderByID)
+
 
 export default router

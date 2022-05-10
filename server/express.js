@@ -74,6 +74,7 @@ app.get('*', (req, res) => {
     }))
 })
 
+
 // Catch unauthorised errors
 app.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {

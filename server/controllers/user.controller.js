@@ -148,5 +148,6 @@ export default {
 	update,
 	isSeller,
 	stripeCustomer,
-	stripe_auth
+	stripe_auth,
+	createCharge
 }

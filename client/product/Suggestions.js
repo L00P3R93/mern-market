@@ -13,7 +13,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import AddToCart from './../cart/AddToCart'
 
-const useStyls = makeStyle(theme => ({
+const useStyles = makeStyles(theme => ({
     root: theme.mixins.gutters({
         padding: theme.spacing(1),
         paddingBottom: 24,
